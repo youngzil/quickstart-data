@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<parent>
+		<groupId>org.quickstart</groupId>
+		<artifactId>quickstart-data</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath> <!-- lookup parent from repository -->
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>quickstart-data-elasticsearch</artifactId>
+	<packaging>jar</packaging>
+	<name>${project.artifactId}-${project.version}</name>
+	<url>http://maven.apache.org</url>
+	<description>Demo project for XXX</description>
+
+	<properties>
+		<elasticsearch.version>5.6.10</elasticsearch.version>
+		<elasticsearch.version>6.3.0</elasticsearch.version>
+		<elasticsearch.version>2.4.6</elasticsearch.version>
+
+		<jest.version>2.4.0</jest.version>
+		<jest.version>5.3.3</jest.version>
+		
+		<apache-logging-log4j.version>2.11.0</apache-logging-log4j.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>${elasticsearch.version}</version>
+		</dependency>
+		
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.elasticsearch.client</groupId> -->
+<!-- 			<artifactId>transport</artifactId> -->
+<!-- 			<version>${elasticsearch.version}</version> -->
+<!-- 		</dependency> -->
+
+		<dependency>
+			<groupId>io.searchbox</groupId>
+			<artifactId>jest</artifactId>
+			<version>${jest.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+
+	</dependencies>
+
+</project>
