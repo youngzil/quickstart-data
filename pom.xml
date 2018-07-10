@@ -24,17 +24,17 @@
 	</dependencies>
 
 	<modules>
-		<module>quickstart-data-storm</module>
-		<module>quickstart-data-spark</module>
-		<module>quickstart-data-flink</module>
-		<module>quickstart-data-flume</module>
-		<module>quickstart-data-jstorm</module>
-		<module>quickstart-data-hadoop</module>
-		<module>quickstart-data-hbase</module>
-		<module>quickstart-data-lucene</module>
-		<module>quickstart-data-solr</module>
-		<module>quickstart-data-spider</module>
-		<module>quickstart-data-elasticsearch</module>
+		<module>quickstart-storm</module>
+		<module>quickstart-spark</module>
+		<module>quickstart-flink</module>
+		<module>quickstart-flume</module>
+		<module>quickstart-jstorm</module>
+		<module>quickstart-hadoop</module>
+		<module>quickstart-hbase</module>
+		<module>quickstart-lucene</module>
+		<module>quickstart-solr</module>
+		<module>quickstart-spider</module>
+		<module>quickstart-elasticsearch</module>
 	</modules>
 
 </project>

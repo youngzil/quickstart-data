@@ -6,36 +6,20 @@
 		<groupId>org.quickstart</groupId>
 		<artifactId>quickstart-data</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>..</relativePath> <!-- lookup parent from repository -->
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>quickstart-data-storm</artifactId>
+	<artifactId>quickstart-spark</artifactId>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}-${project.version}</name>
 	<url>http://maven.apache.org</url>
-	<description>Demo project for Spring Boot Admin</description>
+	<description>Demo project for XXX</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<dependencies>
-
-		<!-- <dependency> -->
-		<!-- <groupId>org.apache.storm</groupId> -->
-		<!-- <artifactId>storm-core</artifactId> -->
-		<!-- <version>1.1.1</version> -->
-		<!-- <scope>provided</scope> -->
-		<!-- </dependency> -->
-
-		<dependency>
-			<groupId>storm</groupId>
-			<artifactId>storm</artifactId>
-			<version>0.7.1</version>
-		</dependency>
-
-
-
 	</dependencies>
+
 </project>
