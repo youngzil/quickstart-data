@@ -6,7 +6,7 @@
  * Copyright asiainfo Corporation 2017
  * 版权所有 *
  */
-package org.quickstart.elasticsearch.v5;
+package org.quickstart.elasticsearch.transport.v5;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -42,7 +42,6 @@ public class ElasticSearchTest {
     TransportClient client;
 
     @Before
-    @SuppressWarnings({"unchecked"})
     public void before() throws UnknownHostException, InterruptedException, ExecutionException {
         Settings esSettings = Settings.builder().put("cluster.name", "elasticsearch") // 设置ES实例的名称
                 .put("client.transport.sniff", true) // 自动嗅探整个集群的状态，把集群中其他ES节点的ip添加到本地的客户端列表中

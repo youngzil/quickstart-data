@@ -1,3 +1,14 @@
+配置说明
+cluster.name表示es集群的名称，可以自定义一个自己需要的集群名称
+http.port 表示对外提供http服务时的http端口。
+network.host 表示本地监听绑定的ip地址，此处为测试环境，直接使用本机的ip地址 127.0.0.1.
+
+
+es启动监听两个端口，9300和9200
+9300端口是使用tcp客户端连接使用的端口；
+9200端口是通过http协议连接es使用的端口；
+
+
 1、部署elasticsearch：ES出于安全原因阻止您以root身份运行它，client版本要和server版本对应上
 2、插件elasticsearch-head：直接解压放在${es.home}/pluginshead文件夹下
 
@@ -99,5 +110,6 @@ ulimit -n 65536
 
 参考文章
 https://blog.csdn.net/jiuqiyuliang/article/category/6200503
-
+https://blog.csdn.net/mixiu888/article/details/80698613
+https://blog.csdn.net/laigood/article/details/7421197
 

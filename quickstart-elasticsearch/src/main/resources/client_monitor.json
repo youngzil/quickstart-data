@@ -1,0 +1,28 @@
+{
+	"client_monitor": {
+		"properties": {
+			"dockerID": {
+				"type": "string"
+			},
+			"ip": {
+				"type": "string"
+			},
+			"sendNum": {
+				"type": "long"
+			},
+			"failNum": {
+				"type": "long"
+			},
+			"averageCost": {
+				"type": "long"
+			},
+			"averageTps": {
+				"type": "long"
+			},
+			"collectTime": {
+				"type": "date",
+				"format": "strict_date_optional_time||epoch_millis"
+			}
+		}
+	}
+}

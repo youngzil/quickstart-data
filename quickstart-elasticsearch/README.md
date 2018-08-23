@@ -1,7 +1,10 @@
 官网：https://www.elastic.co/
 https://www.elastic.co/products/elasticsearch
 https://www.elastic.co/cn/products/elasticsearch
+https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html
 请在论坛上提问这样的问题：https : //discuss.elastic.co/
+
+elasticsearch客户端：https://www.elastic.co/guide/en/elasticsearch/client/index.html
 
 https://github.com/elastic/elasticsearch
 
@@ -27,4 +30,5 @@ http://mobz.github.io/elasticsearch-head/
 https://github.com/mobz/elasticsearch-head
 
 
-
+Jest客户端
+https://github.com/searchbox-io/Jest
