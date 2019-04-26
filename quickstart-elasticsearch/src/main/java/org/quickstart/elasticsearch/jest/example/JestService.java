@@ -29,6 +29,8 @@ import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
 import io.searchbox.indices.CreateIndex;
 import io.searchbox.indices.DeleteIndex;
+import io.searchbox.indices.aliases.AddAliasMapping;
+import io.searchbox.indices.aliases.ModifyAliases;
 import io.searchbox.indices.mapping.GetMapping;
 import io.searchbox.indices.mapping.PutMapping;
 
@@ -52,7 +54,7 @@ public class JestService {
         urlList.add("http://20.26.38.165:8200");
         urlList.add("http://20.26.38.164:8201");
         urlList.add("http://20.26.38.164:8200");
-
+        
         JestClientFactory factory = new JestClientFactory();
         factory.setHttpClientConfig(new HttpClientConfig.Builder(urlList)
                 // .Builder("http://20.26.38.165:8200")
@@ -69,8 +71,16 @@ public class JestService {
      * @throws Exception
      */
     public boolean createIndex(JestClient jestClient, String indexName) throws Exception {
-
         JestResult jr = jestClient.execute(new CreateIndex.Builder(indexName).build());
+        return jr.isSucceeded();
+    }
+    
+    public boolean createIndexAlias(JestClient jestClient, List<String> indices,String alias) throws Exception {
+
+        ModifyAliases modifyAliases = new ModifyAliases.Builder(
+                new AddAliasMapping.Builder((indices), alias).build()
+        ).build();
+        JestResult jr = jestClient.execute(modifyAliases);
         return jr.isSucceeded();
     }
 

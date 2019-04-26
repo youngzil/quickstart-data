@@ -8,6 +8,12 @@ elasticsearch客户端：https://www.elastic.co/guide/en/elasticsearch/client/in
 
 https://github.com/elastic/elasticsearch
 
+以下是一些超连结以协助您使用 Elasticsearch 及其开源套件。
+实时全文索引／搜寻／分析: Elasticsearch：https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+数据搜集／丰富／传播: Logstash：https://www.elastic.co/guide/en/logstash/current/index.html
+图像化数据汇报: Kibana：https://www.elastic.co/guide/en/kibana/current/index.html
+
+
 Elasticsearch 参考手册：
 https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 https://github.com/elastic/elasticsearch-definitive-guide/
@@ -32,3 +38,4 @@ https://github.com/mobz/elasticsearch-head
 
 Jest客户端
 https://github.com/searchbox-io/Jest
+

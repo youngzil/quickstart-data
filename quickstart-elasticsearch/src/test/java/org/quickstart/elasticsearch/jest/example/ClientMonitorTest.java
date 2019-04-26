@@ -39,7 +39,10 @@ public class ClientMonitorTest {
 
     private JestService jestService;
     private JestClient jestClient;
-    private String indexName = "client_monitor_index";
+    List<String> indices = new ArrayList<>();
+
+    private String indexName = "client_monitor_index4";
+    private String indexNameAliases = "client_monitor_index";
     private String typeName = "client_monitor";
 
     @Before
@@ -47,6 +50,11 @@ public class ClientMonitorTest {
 
         jestService = new JestService();
         jestClient = jestService.getJestClient();
+
+        indices.add("client_monitor_index1");
+        indices.add("client_monitor_index2");
+        indices.add("client_monitor_index3");
+
     }
 
     @After
@@ -58,7 +66,18 @@ public class ClientMonitorTest {
     @Test
     public void createIndex() throws Exception {
 
-        boolean result = jestService.createIndex(jestClient, indexName);
+         boolean result = jestService.createIndex(jestClient, indexName);
+         System.out.println(result);
+//        for (String index : indices) {
+//            boolean result = jestService.createIndex(jestClient, index);
+//            System.out.println(result);
+//        }
+    }
+
+    @Test
+    public void createIndexAlias() throws Exception {
+
+        boolean result = jestService.createIndexAlias(jestClient, indices, indexNameAliases);
         System.out.println(result);
     }
 
@@ -75,8 +94,13 @@ public class ClientMonitorTest {
 
         System.out.println(source);
 
-        boolean result = jestService.createIndexMapping(jestClient, indexName, typeName, source);
-        System.out.println(result);
+        // boolean result = jestService.createIndexMapping(jestClient, indexName, typeName, source);
+        // System.out.println(result);
+
+        for (String index : indices) {
+            boolean result = jestService.createIndexMapping(jestClient, index, typeName, source);
+            System.out.println(result);
+        }
     }
 
     @Test
@@ -92,7 +116,7 @@ public class ClientMonitorTest {
         List<Object> objs = new ArrayList<Object>();
         Random random = new Random();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 3; i++) {
             ClientMonitor clientMonitor = new ClientMonitor();
             clientMonitor.setDockerID("111111111");
             clientMonitor.setIp("10.21.20.183");
@@ -105,8 +129,13 @@ public class ClientMonitorTest {
             objs.add(clientMonitor);
         }
 
-        boolean result = jestService.index(jestClient, indexName, typeName, objs);
-        System.out.println(result);
+//        boolean result = jestService.index(jestClient, indexName, typeName, objs);
+//        System.out.println(result);
+        
+        for (String index : indices) {
+            boolean result = jestService.index(jestClient, index, typeName, objs);
+          System.out.println(result);
+        }
     }
 
     @Test
@@ -260,7 +289,13 @@ public class ClientMonitorTest {
     @Test
     public void deleteIndex() throws Exception {
 
-        boolean result = jestService.delete(jestClient, indexName);
-        System.out.println(result);
+        // boolean result = jestService.delete(jestClient, indexName);
+        // System.out.println(result);
+
+        for (String index : indices) {
+            boolean result = jestService.delete(jestClient, index);
+            System.out.println(result);
+        }
+
     }
 }
