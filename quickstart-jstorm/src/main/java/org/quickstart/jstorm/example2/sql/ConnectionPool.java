@@ -11,47 +11,47 @@ import java.util.Properties;
  */
 public class ConnectionPool {
 
-    private volatile static ConnectionPool instance;
-    private ComboPooledDataSource dataSource;
+  private volatile static ConnectionPool instance;
+  private ComboPooledDataSource dataSource;
 
-    public static ConnectionPool getInstance() {
+  public static ConnectionPool getInstance() {
+    if (instance == null) {
+      synchronized (ConnectionPool.class) {
         if (instance == null) {
-            synchronized (ConnectionPool.class) {
-                if (instance == null) {
-                    instance = new ConnectionPool();
-                }
-            }
+          instance = new ConnectionPool();
         }
-        return instance;
+      }
     }
+    return instance;
+  }
 
-    private ConnectionPool() {
-        Properties properties = new Properties();
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("config.properties");
-        try {
-            properties.load(inputStream);
-            String driverClass = properties.getProperty("driver.class");
-            String jdbcUrl = properties.getProperty("jdbc.url");
-            String user = properties.getProperty("user");
-            String password = properties.getProperty("password");
-            int initPoolSize = Integer.parseInt(properties.getProperty("init.pool.size"));
-            int minPoolSize = Integer.parseInt(properties.getProperty("min.pool.size"));
-            int maxPoolSize = Integer.parseInt(properties.getProperty("max.pool.size"));
-            dataSource = new ComboPooledDataSource();
-            dataSource.setDriverClass(driverClass);
-            dataSource.setJdbcUrl(jdbcUrl);
-            dataSource.setUser(user);
-            dataSource.setPassword(password);
-            dataSource.setInitialPoolSize(initPoolSize);
-            dataSource.setMinPoolSize(minPoolSize);
-            dataSource.setMinPoolSize(maxPoolSize);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+  private ConnectionPool() {
+    Properties properties = new Properties();
+    InputStream inputStream = getClass().getClassLoader().getResourceAsStream("config.properties");
+    try {
+      properties.load(inputStream);
+      String driverClass = properties.getProperty("driver.class");
+      String jdbcUrl = properties.getProperty("jdbc.url");
+      String user = properties.getProperty("user");
+      String password = properties.getProperty("password");
+      int initPoolSize = Integer.parseInt(properties.getProperty("init.pool.size"));
+      int minPoolSize = Integer.parseInt(properties.getProperty("min.pool.size"));
+      int maxPoolSize = Integer.parseInt(properties.getProperty("max.pool.size"));
+      dataSource = new ComboPooledDataSource();
+      dataSource.setDriverClass(driverClass);
+      dataSource.setJdbcUrl(jdbcUrl);
+      dataSource.setUser(user);
+      dataSource.setPassword(password);
+      dataSource.setInitialPoolSize(initPoolSize);
+      dataSource.setMinPoolSize(minPoolSize);
+      dataSource.setMinPoolSize(maxPoolSize);
+    } catch (Exception e) {
+      e.printStackTrace();
     }
+  }
 
-    public DataSource getDataSource() {
-        return dataSource;
-    }
+  public DataSource getDataSource() {
+    return dataSource;
+  }
 
 }

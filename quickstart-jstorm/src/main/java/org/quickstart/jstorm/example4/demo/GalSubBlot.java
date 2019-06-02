@@ -17,30 +17,30 @@ import backtype.storm.tuple.Tuple;
  */
 public class GalSubBlot extends BaseRichBolt {
 
-    private OutputCollector collector;
+  private OutputCollector collector;
 
-    private String field;
+  private String field;
 
-    public GalSubBlot(String field) {
-        this.field = field;
-    }
+  public GalSubBlot(String field) {
+    this.field = field;
+  }
 
-    @Override
-    public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
-        this.collector = collector;
-    }
+  @Override
+  public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
+    this.collector = collector;
+  }
 
-    @Override
-    public void execute(Tuple input) {
-        Msg msg = (Msg) input.getValue(0);
-        Fields fields = input.getFields();
-        String field = fields.get(0);
-        Logging.info("GalSubBlot.execute  msg: " + msg + ", field: " + field);
-        this.collector.ack(input);
-    }
+  @Override
+  public void execute(Tuple input) {
+    Msg msg = (Msg) input.getValue(0);
+    Fields fields = input.getFields();
+    String field = fields.get(0);
+    Logging.info("GalSubBlot.execute  msg: " + msg + ", field: " + field);
+    this.collector.ack(input);
+  }
 
-    @Override
-    public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields(this.field));
-    }
+  @Override
+  public void declareOutputFields(OutputFieldsDeclarer declarer) {
+    declarer.declare(new Fields(this.field));
+  }
 }

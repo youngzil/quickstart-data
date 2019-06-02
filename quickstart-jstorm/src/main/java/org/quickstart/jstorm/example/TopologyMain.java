@@ -14,23 +14,23 @@ import backtype.storm.tuple.Fields;
  */
 public class TopologyMain {
 
-    public static void main(String[] args) throws Exception {
-        TopologyBuilder builder = new TopologyBuilder();
+  public static void main(String[] args) throws Exception {
+    TopologyBuilder builder = new TopologyBuilder();
 
-        builder.setSpout("send", new GenRandomSentenceSpout());
+    builder.setSpout("send", new GenRandomSentenceSpout());
 
-        builder.setBolt("split", new SplitSentenceBolt()).shuffleGrouping("send");
-        builder.setBolt("count", new WordCountBolt()).fieldsGrouping("split", new Fields("word"));
+    builder.setBolt("split", new SplitSentenceBolt()).shuffleGrouping("send");
+    builder.setBolt("count", new WordCountBolt()).fieldsGrouping("split", new Fields("word"));
 
-        Config conf = new Config();
-        conf.setDebug(true);
-        conf.setNumWorkers(5);
-        conf.setNumAckers(3);
-        // conf.setMaxTaskParallelism(3);
-        LocalCluster cluster = new LocalCluster();
-        cluster.submitTopology("word_count", conf, builder.createTopology());
-        System.out.println("done--------------------------------------");
-        // cluster.shutdown();
-    }
+    Config conf = new Config();
+    conf.setDebug(true);
+    conf.setNumWorkers(5);
+    conf.setNumAckers(3);
+    // conf.setMaxTaskParallelism(3);
+    LocalCluster cluster = new LocalCluster();
+    cluster.submitTopology("word_count", conf, builder.createTopology());
+    System.out.println("done--------------------------------------");
+    // cluster.shutdown();
+  }
 
 }

@@ -1,6 +1,7 @@
 package org.quickstart.jstorm.example.bolt;
 
 // standard-import
+
 import java.util.Map;
 import java.util.HashMap;
 
@@ -19,30 +20,30 @@ import backtype.storm.tuple.Tuple;
  */
 public class SplitSentenceBolt implements IBasicBolt {
 
-    // @Override
-    public void prepare(Map map, TopologyContext context) {
+  // @Override
+  public void prepare(Map map, TopologyContext context) {
 
+  }
+
+  // @Override
+  public void execute(Tuple tuple, BasicOutputCollector collector) {
+    String sentence = tuple.getString(0);
+    for (String word : sentence.split(" ")) {
+      collector.emit(new Values(word));
     }
+  }
 
-    // @Override
-    public void execute(Tuple tuple, BasicOutputCollector collector) {
-        String sentence = tuple.getString(0);
-        for (String word : sentence.split(" ")) {
-            collector.emit(new Values(word));
-        }
-    }
+  public void declareOutputFields(OutputFieldsDeclarer declarer) {
+    declarer.declare(new Fields("word"));
+  }
 
-    public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("word"));
-    }
+  public void cleanup() {
 
-    public void cleanup() {
+  }
 
-    }
+  public Map<String, Object> getComponentConfiguration() {
+    return null;
 
-    public Map<String, Object> getComponentConfiguration() {
-        return null;
-
-    }
+  }
 
 }

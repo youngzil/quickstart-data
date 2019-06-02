@@ -17,24 +17,24 @@ import backtype.storm.tuple.Values;
  */
 public class EventScheme implements Scheme {
 
-    private static final Logger log = LoggerFactory.getLogger(EventScheme.class);
+  private static final Logger log = LoggerFactory.getLogger(EventScheme.class);
 
-    @Override
-    public List<Object> deserialize(byte[] bytes) {
-        try {
-            String msg = new String(bytes, "UTF-8");
-            log.info("#### msg:" + msg);
-            StockRealTimeEvent stockRealTimeEvent = JSONObject.parseObject(msg, StockRealTimeEvent.class);
-            return new Values(stockRealTimeEvent);
-        } catch (Exception e) {
-            e.printStackTrace();
-            log.error("Exception:", e);
-        }
-        return null;
+  @Override
+  public List<Object> deserialize(byte[] bytes) {
+    try {
+      String msg = new String(bytes, "UTF-8");
+      log.info("#### msg:" + msg);
+      StockRealTimeEvent stockRealTimeEvent = JSONObject.parseObject(msg, StockRealTimeEvent.class);
+      return new Values(stockRealTimeEvent);
+    } catch (Exception e) {
+      e.printStackTrace();
+      log.error("Exception:", e);
     }
+    return null;
+  }
 
-    @Override
-    public Fields getOutputFields() {
-        return new Fields("msg");
-    }
+  @Override
+  public Fields getOutputFields() {
+    return new Fields("msg");
+  }
 }

@@ -8,14 +8,14 @@ import org.elasticsearch.index.query.QueryBuilder;
  */
 public abstract class ElasticsearchClientBase extends ElasticsearchClient {
 
-    protected SearchResponse twitterPrepareSearch(QueryBuilder qb) {
-        SearchResponse response = client.prepareSearch("twitter")//可以是多个index
-                .setTypes("tweet")//可以是多个类型
-                .setQuery(qb)    // Query 查询条件
-                .get();
+  protected SearchResponse twitterPrepareSearch(QueryBuilder qb) {
+    SearchResponse response = client.prepareSearch("twitter")//可以是多个index
+        .setTypes("tweet")//可以是多个类型
+        .setQuery(qb)    // Query 查询条件
+        .get();
 
-        println(response);
-        return response;
-    }
+    println(response);
+    return response;
+  }
 
 }

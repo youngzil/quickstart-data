@@ -20,33 +20,35 @@ import backtype.storm.tuple.Tuple;
  */
 public class ReportBolt extends BaseBasicBolt {
 
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
-    private QueryRunner query;
+  private final Logger log = LoggerFactory.getLogger(this.getClass());
+  private QueryRunner query;
 
-    @Override
-    public void prepare(Map stormConf, TopologyContext context) {
-        log.info("----------ReportBolt 初始化...");
-        query = new QueryRunner(ConnectionPool.getInstance().getDataSource());
+  @Override
+  public void prepare(Map stormConf, TopologyContext context) {
+    log.info("----------ReportBolt 初始化...");
+    query = new QueryRunner(ConnectionPool.getInstance().getDataSource());
+  }
+
+  @Override
+  public void execute(Tuple tuple, BasicOutputCollector basicOutputCollector) {
+    ResultStock resultStock = (ResultStock) tuple.getValue(0);
+    String sql = "insert into result(stock_code,stock_price,total_value,stategy_id) values(?,?,?,?)";
+    Object params[] = {resultStock.getStockCode(), resultStock.getNewPrice(),
+        resultStock.getTotalValue(), resultStock.getStrategyId()};
+    try {
+      query.update(sql, params);
+    } catch (SQLException e) {
+      log.error("SQLException:", e);
     }
+  }
 
-    @Override
-    public void execute(Tuple tuple, BasicOutputCollector basicOutputCollector) {
-        ResultStock resultStock = (ResultStock) tuple.getValue(0);
-        String sql = "insert into result(stock_code,stock_price,total_value,stategy_id) values(?,?,?,?)";
-        Object params[] = {resultStock.getStockCode(), resultStock.getNewPrice(), resultStock.getTotalValue(), resultStock.getStrategyId()};
-        try {
-            query.update(sql, params);
-        } catch (SQLException e) {
-            log.error("SQLException:", e);
-        }
-    }
+  @Override
+  public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
 
-    @Override
-    public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
+  }
 
-    }
-
-    @Override
-    public void cleanup() {}
+  @Override
+  public void cleanup() {
+  }
 
 }

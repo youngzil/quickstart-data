@@ -10,24 +10,24 @@ import org.quickstart.elasticsearch.transport.v5.sample.ElasticsearchClientBase;
 public class GetAPI extends ElasticsearchClientBase {
 
 
-    @Test
+  @Test
 
-    public void testForGetApi() throws Exception {
+  public void testForGetApi() throws Exception {
 
-        /**
-         * 根据id查看文档
-         */
-        GetResponse response = client.prepareGet("twitter", "tweet", "1").get();
+    /**
+     * 根据id查看文档
+     */
+    GetResponse response = client.prepareGet("twitter", "tweet", "1").get();
 
 //        GetResponse response = client.prepareGet("twitter", "tweet", "1")
 //                .setOperationThreaded(false)  //`true` 是在不同的线程里执行此次操作
 //                .get();
-        if (response.isExists()) {
-            System.out.println("GetApi 有此文档：" + response.toString());
-        } else {
-            System.out.println("GetApi 没有此文档：" + response.toString());
-        }
-
+    if (response.isExists()) {
+      System.out.println("GetApi 有此文档：" + response.toString());
+    } else {
+      System.out.println("GetApi 没有此文档：" + response.toString());
     }
+
+  }
 
 }

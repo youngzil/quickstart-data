@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<groupId>org.quickstart</groupId>
-		<artifactId>quickstart-all</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>..</relativePath> <!-- lookup parent from repository -->
-	</parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>org.quickstart</groupId>
+    <artifactId>quickstart-all</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>..</relativePath> <!-- lookup parent from repository -->
+  </parent>
 
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>quickstart-data</artifactId>
-	<packaging>pom</packaging>
-	<name>${project.artifactId}-${project.version}</name>
-	<url>http://maven.apache.org</url>
-	<description>Demo project for Spring Boot Admin</description>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>quickstart-data</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.artifactId}-${project.version}</name>
+  <url>http://maven.apache.org</url>
+  <description>Demo project for Spring Boot Admin</description>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
-	<dependencies>
-	</dependencies>
+  <dependencies>
+  </dependencies>
 
-	<modules>
-		<module>quickstart-storm</module>
-		<module>quickstart-spark</module>
-		<module>quickstart-flink</module>
-		<module>quickstart-flume</module>
-		<module>quickstart-jstorm</module>
-		<module>quickstart-hadoop</module>
-		<module>quickstart-hbase</module>
-		<module>quickstart-lucene</module>
-		<module>quickstart-solr</module>
-		<module>quickstart-spider</module>
-		<module>quickstart-elasticsearch</module>
-		<module>quickstart-druid-io</module>
-	</modules>
+  <modules>
+    <module>quickstart-storm</module>
+    <module>quickstart-spark</module>
+    <module>quickstart-flink</module>
+    <module>quickstart-flume</module>
+    <module>quickstart-jstorm</module>
+    <module>quickstart-hadoop</module>
+    <module>quickstart-hbase</module>
+    <module>quickstart-lucene</module>
+    <module>quickstart-solr</module>
+    <module>quickstart-spider</module>
+    <module>quickstart-elasticsearch</module>
+    <module>quickstart-druid-io</module>
+  </modules>
 
 </project>

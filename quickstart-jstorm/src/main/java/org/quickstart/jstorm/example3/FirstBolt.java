@@ -14,18 +14,19 @@ import backtype.storm.tuple.Tuple;
  * @since 1.0.0
  */
 public class FirstBolt extends BaseRichBolt {
-    private OutputCollector collector;
 
-    public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
-        this.collector = outputCollector;
-    }
+  private OutputCollector collector;
 
-    public void execute(Tuple tuple) {
-        System.out.println("值==" + tuple.getValue(0));
-        collector.ack(tuple);
-    }
+  public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
+    this.collector = outputCollector;
+  }
 
-    public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
+  public void execute(Tuple tuple) {
+    System.out.println("值==" + tuple.getValue(0));
+    collector.ack(tuple);
+  }
 
-    }
+  public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
+
+  }
 }

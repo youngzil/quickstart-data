@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-    <Appenders>
-        <Console name="console" target="SYSTEM_OUT">
-            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
-        </Console>
-    </Appenders>
-    <Loggers>
-        <Root level="debug" additivity="false">
-            <AppenderRef ref="console"/>
-        </Root>
-    </Loggers>
- </Configuration>
- 
- 
- 
-<!--  <?xml version="1.0" encoding="UTF-8"?>   -->
-<!-- <Configuration status="warn">   -->
-<!--             <Appenders>   -->
-<!--                         <Console name="Console" target="SYSTEM_OUT">   -->
-<!--                                     <PatternLayout pattern="[%-5p] %d %c - %m%n" />   -->
-<!--                         </Console>   -->
-<!--                         <File name="File" fileName="dist/my.log">   -->
-<!--                                     <PatternLayout pattern="%m%n" />   -->
-<!--                         </File>   -->
-<!--             </Appenders>   -->
-  
-<!--             <Loggers>   -->
-<!--                         <Logger name="org.quickstart.elasticsearch" level="INFO">   -->
-<!--                                     <AppenderRef ref="File" />   -->
-<!--                         </Logger>   -->
-<!--                         <Root level="INFO">   -->
-<!--                                     <AppenderRef ref="Console" />   -->
-<!--                         </Root>   -->
-<!--             </Loggers>   -->
+  <Appenders>
+    <Console name="console" target="SYSTEM_OUT">
+      <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="debug" additivity="false">
+      <AppenderRef ref="console"/>
+    </Root>
+  </Loggers>
+</Configuration>
+
+
+  <!--  <?xml version="1.0" encoding="UTF-8"?>   -->
+  <!-- <Configuration status="warn">   -->
+  <!--             <Appenders>   -->
+  <!--                         <Console name="Console" target="SYSTEM_OUT">   -->
+  <!--                                     <PatternLayout pattern="[%-5p] %d %c - %m%n" />   -->
+  <!--                         </Console>   -->
+  <!--                         <File name="File" fileName="dist/my.log">   -->
+  <!--                                     <PatternLayout pattern="%m%n" />   -->
+  <!--                         </File>   -->
+  <!--             </Appenders>   -->
+
+  <!--             <Loggers>   -->
+  <!--                         <Logger name="org.quickstart.elasticsearch" level="INFO">   -->
+  <!--                                     <AppenderRef ref="File" />   -->
+  <!--                         </Logger>   -->
+  <!--                         <Root level="INFO">   -->
+  <!--                                     <AppenderRef ref="Console" />   -->
+  <!--                         </Root>   -->
+  <!--             </Loggers>   -->
  

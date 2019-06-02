@@ -16,29 +16,31 @@ import backtype.storm.tuple.Values;
  */
 public class StockFilterBolt extends BaseBasicBolt {
 
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
+  private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    /**
-     * 过滤逻辑
-     */
-    @Override
-    public void execute(Tuple tuple, BasicOutputCollector basicOutputCollector) {
-        StockRealTimeEvent event = (StockRealTimeEvent) tuple.getValue(0);
-        log.info("---StockRealTimeEvent：" + event);
-        if (event.getNewPrice() == 0) {
-            log.info("过滤掉无效行情：" + event);
-            return;
-        }
-        if (event.getBuyPrice1() > 0 && event.getSellPrice1() > 0 && (event.getBuyPrice2() + event.getSellPrice2()) == 0 && (event.getBuyPrice5() + event.getSellPrice5()) == 0) {
-            log.info("过滤掉无效行情：" + event);
-            return;
-        }
-        basicOutputCollector.emit(new Values(event));
+  /**
+   * 过滤逻辑
+   */
+  @Override
+  public void execute(Tuple tuple, BasicOutputCollector basicOutputCollector) {
+    StockRealTimeEvent event = (StockRealTimeEvent) tuple.getValue(0);
+    log.info("---StockRealTimeEvent：" + event);
+    if (event.getNewPrice() == 0) {
+      log.info("过滤掉无效行情：" + event);
+      return;
     }
-
-    @Override
-    public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
-        outputFieldsDeclarer.declare(new Fields("filter-stock"));
-
+    if (event.getBuyPrice1() > 0 && event.getSellPrice1() > 0
+        && (event.getBuyPrice2() + event.getSellPrice2()) == 0
+        && (event.getBuyPrice5() + event.getSellPrice5()) == 0) {
+      log.info("过滤掉无效行情：" + event);
+      return;
     }
+    basicOutputCollector.emit(new Values(event));
+  }
+
+  @Override
+  public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
+    outputFieldsDeclarer.declare(new Fields("filter-stock"));
+
+  }
 }

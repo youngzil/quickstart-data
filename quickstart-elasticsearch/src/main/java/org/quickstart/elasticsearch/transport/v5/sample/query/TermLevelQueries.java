@@ -15,36 +15,34 @@ import org.junit.Test;
 import org.quickstart.elasticsearch.transport.v5.sample.ElasticsearchClientBase;
 
 /**
- * 术语查询
- * 通常用于结构化数据，如数字、日期和枚举，而不是全文字段
- * 官方文档 @see <a href='https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/java-term-level-queries.html'></a>
- * 中文文档 @see <a href='https://es.quanke.name/query-dsl/term-level-queries.html'></a>
- * Created by http://quanke.name on 2017/11/16.
+ * 术语查询 通常用于结构化数据，如数字、日期和枚举，而不是全文字段 官方文档 @see <a href='https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/java-term-level-queries.html'></a>
+ * 中文文档 @see <a href='https://es.quanke.name/query-dsl/term-level-queries.html'></a> Created by
+ * http://quanke.name on 2017/11/16.
  */
 public class TermLevelQueries extends ElasticsearchClientBase {
 
-    @Test
-    public void testTermQuery() throws Exception {
-        QueryBuilder qb = termQuery(
-                "user",    //field
-                "kimchy"   //text
-        );
+  @Test
+  public void testTermQuery() throws Exception {
+    QueryBuilder qb = termQuery(
+        "user",    //field
+        "kimchy"   //text
+    );
 
-        twitterPrepareSearch(qb);
-    }
+    twitterPrepareSearch(qb);
+  }
 
 
-    @Test
-    public void testTermsQuery() throws Exception {
-        QueryBuilder qb = termsQuery(
-                "user",    //field
-                "kimchy", "quanke");                    //values
+  @Test
+  public void testTermsQuery() throws Exception {
+    QueryBuilder qb = termsQuery(
+        "user",    //field
+        "kimchy", "quanke");                    //values
 
-        twitterPrepareSearch(qb);
-    }
+    twitterPrepareSearch(qb);
+  }
 
-    @Test
-    public void testRangeQuery() throws Exception {
+  @Test
+  public void testRangeQuery() throws Exception {
 
 //        gte() :范围查询将匹配字段值大于或等于此参数值的文档。
 //        gt() :范围查询将匹配字段值大于此参数值的文档。
@@ -62,73 +60,68 @@ public class TermLevelQueries extends ElasticsearchClientBase {
 //        rangeQueryBuilder.includeLower(true);
 //        rangeQueryBuilder.includeUpper(true);
 
-        //上面代码等价于下面代码
+    //上面代码等价于下面代码
 
-        QueryBuilder qb = QueryBuilders.rangeQuery("age").gte(11).lte(21);
+    QueryBuilder qb = QueryBuilders.rangeQuery("age").gte(11).lte(21);
 
+    twitterPrepareSearch(qb);
+  }
 
-        twitterPrepareSearch(qb);
-    }
+  @Test
+  public void testExistsQuery() throws Exception {
+    QueryBuilder qb = existsQuery("user");
 
-    @Test
-    public void testExistsQuery() throws Exception {
-        QueryBuilder qb = existsQuery("user");
+    twitterPrepareSearch(qb);
+  }
 
-        twitterPrepareSearch(qb);
-    }
+  /**
+   * 查找指定字段包含以指定的精确前缀开头的值的文档。
+   */
+  @Test
+  public void testPrefixQuery() throws Exception {
+    QueryBuilder qb = prefixQuery(
+        "user",    //field
+        "q"     //prefix
+    );
 
-    /**
-     * 查找指定字段包含以指定的精确前缀开头的值的文档。
-     *
-     * @throws Exception
-     */
-    @Test
-    public void testPrefixQuery() throws Exception {
-        QueryBuilder qb = prefixQuery(
-                "user",    //field
-                "q"     //prefix
-        );
+    twitterPrepareSearch(qb);
+  }
 
-        twitterPrepareSearch(qb);
-    }
+  /**
+   * 通配符查询
+   */
+  @Test
+  public void testWildcardQuery() throws Exception {
+    QueryBuilder qb = wildcardQuery(
+        "user",
+        "k?mc*"
+    );
 
-    /**
-     * 通配符查询
-     * @throws Exception
-     */
-    @Test
-    public void testWildcardQuery() throws Exception {
-        QueryBuilder qb = wildcardQuery(
-                "user",
-                "k?mc*"
-        );
+    twitterPrepareSearch(qb);
+  }
 
-        twitterPrepareSearch(qb);
-    }
+  /**
+   * 正则表达式查询
+   */
+  @Test
+  public void testRegexpQuery() throws Exception {
 
-    /**
-     * 正则表达式查询
-     * @throws Exception
-     */
-    @Test
-    public void testRegexpQuery() throws Exception {
+    QueryBuilder qb = regexpQuery(
+        "user",        //field
+        "k.*");             //regexp
+    twitterPrepareSearch(qb);
+  }
 
-        QueryBuilder qb = regexpQuery(
-                "user",        //field
-                "k.*");             //regexp
-        twitterPrepareSearch(qb);
-    }
+  @Test
+  public void testFuzzyQuery() throws Exception {
 
-    @Test
-    public void testFuzzyQuery() throws Exception {
+    QueryBuilder qb = fuzzyQuery(
+        "user",     //field
+        "kimzh"    //text
+    ).fuzziness(Fuzziness.TWO);
 
-        QueryBuilder qb = fuzzyQuery(
-                "user",     //field
-                "kimzh"    //text
-        ).fuzziness(Fuzziness.TWO);
-
-        twitterPrepareSearch(qb);
-    }
+    twitterPrepareSearch(qb);
+  }
 
 
 }

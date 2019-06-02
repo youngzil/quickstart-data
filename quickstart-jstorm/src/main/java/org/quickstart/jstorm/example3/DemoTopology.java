@@ -13,22 +13,23 @@ import backtype.storm.utils.Utils;
  */
 public class DemoTopology {
 
-    public static void main(String[] args) {
-        TopologyBuilder topologyBuilder = new TopologyBuilder();
+  public static void main(String[] args) {
+    TopologyBuilder topologyBuilder = new TopologyBuilder();
 
-        topologyBuilder.setSpout("demoSpout", new DemoSpout()).setNumTasks(1).setMaxTaskParallelism(1);
-        topologyBuilder.setBolt("firstBolt", new FirstBolt()).setNumTasks(1).setMaxTaskParallelism(1).localOrShuffleGrouping("demoSpout");
+    topologyBuilder.setSpout("demoSpout", new DemoSpout()).setNumTasks(1).setMaxTaskParallelism(1);
+    topologyBuilder.setBolt("firstBolt", new FirstBolt()).setNumTasks(1).setMaxTaskParallelism(1)
+        .localOrShuffleGrouping("demoSpout");
 
-        StormTopology topology = topologyBuilder.createTopology();
-        LocalCluster localCluster = new LocalCluster();
-        Config conf = new Config();
-        conf.setMaxSpoutPending(10);
-        conf.setNumAckers(1);
-        conf.setNumWorkers(1);
-        conf.setDebug(true);
-        conf.setMessageTimeoutSecs(5);
-        localCluster.submitTopology("demo", conf, topology);
-        Utils.sleep(10000000);
-    }
+    StormTopology topology = topologyBuilder.createTopology();
+    LocalCluster localCluster = new LocalCluster();
+    Config conf = new Config();
+    conf.setMaxSpoutPending(10);
+    conf.setNumAckers(1);
+    conf.setNumWorkers(1);
+    conf.setDebug(true);
+    conf.setMessageTimeoutSecs(5);
+    localCluster.submitTopology("demo", conf, topology);
+    Utils.sleep(10000000);
+  }
 
 }

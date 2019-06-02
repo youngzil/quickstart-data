@@ -5,6 +5,6 @@ package org.quickstart.jstorm.example4.demo;
  */
 public interface ITopology {
 
-    void start(String topologyName);
+  void start(String topologyName);
 
 }

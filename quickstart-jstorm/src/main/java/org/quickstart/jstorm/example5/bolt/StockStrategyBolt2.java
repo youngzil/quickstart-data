@@ -27,50 +27,54 @@ import backtype.storm.tuple.Values;
  */
 public class StockStrategyBolt2 extends BaseBasicBolt {
 
-    private BasicOutputCollector basicOutputCollector;
-    private EPServiceProvider epService;
+  private BasicOutputCollector basicOutputCollector;
+  private EPServiceProvider epService;
 
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
+  private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @Override
-    public void prepare(Map stormConf, TopologyContext context) {
-        log.info("--------------------股票策略2(大买盘)初始化....");
-        Configuration configuration = new Configuration();
-        configuration.addEventType("StockRealTimeEvent", StockRealTimeEvent.class.getName());
-        epService = EPServiceProviderManager.getProvider("strategy2", configuration);
-        EPStatement stmt = epService.getEPAdministrator()
-                .createEPL("select * from StockRealTimeEvent where " + "(buyCount5+buyCount4+buyCount3+buyCount2+buyCount1)*100" + ">=(sellCount5+sellCount4+sellCount3+sellCount2+sellCount1)");
-        stmt.addListener(new UpdateListener() {
-            @Override
-            public void update(EventBean[] newEvents, EventBean[] oldEvents) {
-                if (newEvents != null) {
-                    EventBean theEvent = newEvents[0];
-                    StockRealTimeEvent stockRTEvent = (StockRealTimeEvent) theEvent.getUnderlying();
-                    log.info("--------股票策略2(大买盘)选出股票：" + stockRTEvent.getStockCode() + " 最新价格：" + stockRTEvent.getNewPrice());
-                    basicOutputCollector.emit(new Values(new ResultStock(stockRTEvent.getStockCode(), stockRTEvent.getNewPrice(), 2)));
-                }
-            }
-        });
-
-    }
-
-    @Override
-    public void execute(Tuple tuple, BasicOutputCollector basicOutputCollector) {
-        this.basicOutputCollector = basicOutputCollector;
-        StockRealTimeEvent stockRealTimeEvent = (StockRealTimeEvent) tuple.getValue(0);
-        log.info("策略2(大买盘) ===> Esper:" + stockRealTimeEvent);
-        epService.getEPRuntime().sendEvent(stockRealTimeEvent);
-    }
-
-    @Override
-    public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
-        outputFieldsDeclarer.declare(new Fields("StockStrageBolt2"));
-    }
-
-    @Override
-    public void cleanup() {
-        if (epService.isDestroyed()) {
-            epService.destroy();
+  @Override
+  public void prepare(Map stormConf, TopologyContext context) {
+    log.info("--------------------股票策略2(大买盘)初始化....");
+    Configuration configuration = new Configuration();
+    configuration.addEventType("StockRealTimeEvent", StockRealTimeEvent.class.getName());
+    epService = EPServiceProviderManager.getProvider("strategy2", configuration);
+    EPStatement stmt = epService.getEPAdministrator()
+        .createEPL("select * from StockRealTimeEvent where "
+            + "(buyCount5+buyCount4+buyCount3+buyCount2+buyCount1)*100"
+            + ">=(sellCount5+sellCount4+sellCount3+sellCount2+sellCount1)");
+    stmt.addListener(new UpdateListener() {
+      @Override
+      public void update(EventBean[] newEvents, EventBean[] oldEvents) {
+        if (newEvents != null) {
+          EventBean theEvent = newEvents[0];
+          StockRealTimeEvent stockRTEvent = (StockRealTimeEvent) theEvent.getUnderlying();
+          log.info("--------股票策略2(大买盘)选出股票：" + stockRTEvent.getStockCode() + " 最新价格：" + stockRTEvent
+              .getNewPrice());
+          basicOutputCollector.emit(new Values(
+              new ResultStock(stockRTEvent.getStockCode(), stockRTEvent.getNewPrice(), 2)));
         }
+      }
+    });
+
+  }
+
+  @Override
+  public void execute(Tuple tuple, BasicOutputCollector basicOutputCollector) {
+    this.basicOutputCollector = basicOutputCollector;
+    StockRealTimeEvent stockRealTimeEvent = (StockRealTimeEvent) tuple.getValue(0);
+    log.info("策略2(大买盘) ===> Esper:" + stockRealTimeEvent);
+    epService.getEPRuntime().sendEvent(stockRealTimeEvent);
+  }
+
+  @Override
+  public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
+    outputFieldsDeclarer.declare(new Fields("StockStrageBolt2"));
+  }
+
+  @Override
+  public void cleanup() {
+    if (epService.isDestroyed()) {
+      epService.destroy();
     }
+  }
 }

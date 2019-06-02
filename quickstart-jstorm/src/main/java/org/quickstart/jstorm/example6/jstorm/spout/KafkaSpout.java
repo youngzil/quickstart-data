@@ -15,29 +15,29 @@ import backtype.storm.tuple.Values;
 
 public class KafkaSpout extends BaseRichSpout {
 
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;
+  /**
+   *
+   */
+  private static final long serialVersionUID = 1L;
 
-    private static final Logger logger = LoggerFactory.getLogger(KafkaSpout.class);
+  private static final Logger logger = LoggerFactory.getLogger(KafkaSpout.class);
 
-    private SpoutOutputCollector collector;
+  private SpoutOutputCollector collector;
 
-    @Override
-    public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
-        this.collector = collector;
-    }
+  @Override
+  public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
+    this.collector = collector;
+  }
 
-    @Override
-    public void nextTuple() {
-        // 发射
-        collector.emit(new Values(new Random().nextInt(100)));
-    }
+  @Override
+  public void nextTuple() {
+    // 发射
+    collector.emit(new Values(new Random().nextInt(100)));
+  }
 
-    @Override
-    public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("kafka"));
-    }
+  @Override
+  public void declareOutputFields(OutputFieldsDeclarer declarer) {
+    declarer.declare(new Fields("kafka"));
+  }
 
 }

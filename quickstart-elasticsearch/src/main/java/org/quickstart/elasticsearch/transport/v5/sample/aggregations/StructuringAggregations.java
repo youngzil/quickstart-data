@@ -13,20 +13,20 @@ import org.quickstart.elasticsearch.transport.v5.sample.ElasticsearchClientBase;
  */
 public class StructuringAggregations extends ElasticsearchClientBase {
 
-    @Test
-    public void testStructuringAggregations() throws Exception {
-        SearchResponse sr = client.prepareSearch()
-                .addAggregation(
-                        AggregationBuilders.terms("user").field("kimchy")  //
-                                .subAggregation(AggregationBuilders.dateHistogram("by_year")
-                                        .field("postDate")
-                                        .dateHistogramInterval(DateHistogramInterval.YEAR)
+  @Test
+  public void testStructuringAggregations() throws Exception {
+    SearchResponse sr = client.prepareSearch()
+        .addAggregation(
+            AggregationBuilders.terms("user").field("kimchy")  //
+                .subAggregation(AggregationBuilders.dateHistogram("by_year")
+                        .field("postDate")
+                        .dateHistogramInterval(DateHistogramInterval.YEAR)
 //                                        .subAggregation(AggregationBuilders.avg("avg_children").field("children"))
-                                )
                 )
-                .execute().actionGet();
+        )
+        .execute().actionGet();
 
-        println(sr);
-    }
+    println(sr);
+  }
 
 }

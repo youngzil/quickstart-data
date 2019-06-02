@@ -7,13 +7,13 @@ import org.apache.commons.lang.StringUtils;
  */
 public class GalLaunch {
 
-    public static void main(String[] args) {
-        String topologyName = "topoabc";
-        if (args != null && args.length > 0 && StringUtils.isNotEmpty(args[0])) {
-            topologyName = args[0];
-        }
-        ITopology iTopology = new GalTopology();
-        iTopology.start(topologyName);
+  public static void main(String[] args) {
+    String topologyName = "topoabc";
+    if (args != null && args.length > 0 && StringUtils.isNotEmpty(args[0])) {
+      topologyName = args[0];
     }
+    ITopology iTopology = new GalTopology();
+    iTopology.start(topologyName);
+  }
 
 }
