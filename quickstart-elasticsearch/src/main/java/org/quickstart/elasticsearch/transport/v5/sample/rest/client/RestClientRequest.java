@@ -1,5 +1,5 @@
 /**
- * 项目名称：quickstart-elasticsearch 文件名：RestClientRequest.java 版本信息： 日期：2018年8月21日 Copyright asiainfo
+ * 项目名称：quickstart-elasticsearch 文件名：RestClientRequest.java 版本信息： 日期：2018年8月21日 Copyright yangzl
  * Corporation 2018 版权所有 *
  */
 package org.quickstart.elasticsearch.transport.v5.sample.rest.client;
@@ -26,7 +26,7 @@ import org.quickstart.elasticsearch.transport.v5.sample.ElasticsearchRestClient;
 /**
  * RestClientRequest
  *
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年8月21日 下午7:35:30
  * @since 1.0
  */

@@ -1,5 +1,5 @@
 /**
- * 项目名称：quickstart-elasticsearch 文件名：IndexAPI.java 版本信息： 日期：2018年8月21日 Copyright asiainfo
+ * 项目名称：quickstart-elasticsearch 文件名：IndexAPI.java 版本信息： 日期：2018年8月21日 Copyright yangzl
  * Corporation 2018 版权所有 *
  */
 package org.quickstart.elasticsearch.transport.v5.sample.rest.high;
@@ -30,7 +30,7 @@ import org.quickstart.elasticsearch.transport.v5.sample.ElasticsearchRestHighCli
  *
  * https://quanke.gitbooks.io/elasticsearch-java-rest/
  *
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年8月21日 下午8:06:29
  * @since 1.0
  */

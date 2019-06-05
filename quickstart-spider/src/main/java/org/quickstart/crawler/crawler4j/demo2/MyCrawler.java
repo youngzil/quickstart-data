@@ -1,5 +1,5 @@
 /**
- * 项目名称：quickstart-crawler 文件名：MyCrawler.java 版本信息： 日期：2017年7月21日 Copyright asiainfo Corporation
+ * 项目名称：quickstart-crawler 文件名：MyCrawler.java 版本信息： 日期：2017年7月21日 Copyright yangzl Corporation
  * 2017 版权所有 *
  */
 package org.quickstart.crawler.crawler4j.demo2;
@@ -25,7 +25,7 @@ import edu.uci.ics.crawler4j.url.WebURL;
  * MyCrawler
  *
  * @version 2.0
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2017年7月21日 下午10:19:15
  */
 public class MyCrawler extends WebCrawler {

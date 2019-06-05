@@ -1,5 +1,5 @@
 /**
- * 项目名称：quickstart-elasticsearch 文件名：EsClient.java 版本信息： 日期：2017年11月30日 Copyright asiainfo
+ * 项目名称：quickstart-elasticsearch 文件名：EsClient.java 版本信息： 日期：2017年11月30日 Copyright yangzl
  * Corporation 2017 版权所有 *
  */
 package org.quickstart.elasticsearch.transport.v2;
@@ -30,7 +30,7 @@ import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 /**
  * EsClient ESclient 工具类
  *
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2017年11月30日 下午4:51:44
  * @since 1.0
  */

@@ -1,5 +1,5 @@
 /**
- * 项目名称：quickstart-elasticsearch 文件名：ElasticSearchTest.java 版本信息： 日期：2017年11月29日 Copyright asiainfo
+ * 项目名称：quickstart-elasticsearch 文件名：ElasticSearchTest.java 版本信息： 日期：2017年11月29日 Copyright yangzl
  * Corporation 2017 版权所有 *
  */
 package org.quickstart.elasticsearch.transport.v5;
@@ -29,7 +29,7 @@ import org.junit.Test;
 /**
  * ElasticSearchTest
  *
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2017年11月29日 下午10:26:35
  * @since 1.0
  */

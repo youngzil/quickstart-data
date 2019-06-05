@@ -1,5 +1,5 @@
 /**
- * 项目名称：quickstart-elasticsearch 文件名：CreateMapping.java 版本信息： 日期：2018年8月21日 Copyright asiainfo
+ * 项目名称：quickstart-elasticsearch 文件名：CreateMapping.java 版本信息： 日期：2018年8月21日 Copyright yangzl
  * Corporation 2018 版权所有 *
  */
 package org.quickstart.elasticsearch.transport.v5.sample.mapping;
@@ -16,7 +16,7 @@ import org.quickstart.elasticsearch.transport.v5.sample.ElasticsearchClientBase;
 /**
  * CreateMapping
  *
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年8月21日 下午2:09:59
  * @since 1.0
  */

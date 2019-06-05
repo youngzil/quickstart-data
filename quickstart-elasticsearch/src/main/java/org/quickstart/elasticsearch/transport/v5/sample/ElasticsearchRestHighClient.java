@@ -1,6 +1,6 @@
 /**
  * 项目名称：quickstart-elasticsearch 文件名：ElasticsearchRestHighClient.java 版本信息： 日期：2018年8月21日 Copyright
- * asiainfo Corporation 2018 版权所有 *
+ * yangzl Corporation 2018 版权所有 *
  */
 package org.quickstart.elasticsearch.transport.v5.sample;
 
@@ -18,7 +18,7 @@ import org.quickstart.elasticsearch.transport.v5.sample.util.Utils;
  *
  * https://quanke.gitbooks.io/elasticsearch-java-rest/
  *
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年8月21日 下午7:26:14
  * @since 1.0
  */

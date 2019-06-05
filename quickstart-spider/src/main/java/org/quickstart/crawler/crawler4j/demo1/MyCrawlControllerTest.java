@@ -1,5 +1,5 @@
 /**
- * 项目名称：quickstart-crawler 文件名：Controller.java 版本信息： 日期：2017年7月21日 Copyright asiainfo Corporation
+ * 项目名称：quickstart-crawler 文件名：Controller.java 版本信息： 日期：2017年7月21日 Copyright yangzl Corporation
  * 2017 版权所有 *
  */
 package org.quickstart.crawler.crawler4j.demo1;
@@ -14,7 +14,7 @@ import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
  * Controller 爬虫控制器
  *
  * @version 2.0
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2017年7月21日 下午9:23:47
  */
 public class MyCrawlControllerTest {

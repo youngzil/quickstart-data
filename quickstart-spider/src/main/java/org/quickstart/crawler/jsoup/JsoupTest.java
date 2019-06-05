@@ -1,5 +1,5 @@
 /**
- * 项目名称：quickstart-crawler 文件名：JsoupTest.java 版本信息： 日期：2017年7月21日 Copyright asiainfo Corporation
+ * 项目名称：quickstart-crawler 文件名：JsoupTest.java 版本信息： 日期：2017年7月21日 Copyright yangzl Corporation
  * 2017 版权所有 *
  */
 package org.quickstart.crawler.jsoup;
@@ -15,7 +15,7 @@ import org.jsoup.select.Elements;
  * JsoupTest
  *
  * @version 2.0
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2017年7月21日 下午8:56:04
  */
 public class JsoupTest {

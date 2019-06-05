@@ -1,6 +1,6 @@
 /**
  * 项目名称：quickstart-elasticsearch 文件名：ElasticSearchToolsTest.java 版本信息： 日期：2017年11月30日 Copyright
- * asiainfo Corporation 2017 版权所有 *
+ * yangzl Corporation 2017 版权所有 *
  */
 package org.quickstart.elasticsearch.transport.v2;
 
@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * ElasticSearchToolsTest
  *
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2017年11月30日 下午5:37:11
  * @since 1.0
  */

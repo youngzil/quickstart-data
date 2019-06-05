@@ -1,5 +1,5 @@
 /**
- * 项目名称：quickstart-storm 文件名：WordNormalizer.java 版本信息： 日期：2017年9月3日 Copyright asiainfo Corporation
+ * 项目名称：quickstart-storm 文件名：WordNormalizer.java 版本信息： 日期：2017年9月3日 Copyright yangzl Corporation
  * 2017 版权所有 *
  */
 package org.quickstart.storm.example2;
@@ -19,7 +19,7 @@ import backtype.storm.tuple.Values;
 /**
  * WordNormalizer
  *
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2017年9月3日 下午12:09:11
  * @since 1.0
  */

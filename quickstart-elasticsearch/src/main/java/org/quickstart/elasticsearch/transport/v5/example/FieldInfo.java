@@ -1,5 +1,5 @@
 /**
- * 项目名称：quickstart-elasticsearch 文件名：FieldInfo.java 版本信息： 日期：2018年8月21日 Copyright asiainfo
+ * 项目名称：quickstart-elasticsearch 文件名：FieldInfo.java 版本信息： 日期：2018年8月21日 Copyright yangzl
  * Corporation 2018 版权所有 *
  */
 package org.quickstart.elasticsearch.transport.v5.example;
@@ -7,7 +7,7 @@ package org.quickstart.elasticsearch.transport.v5.example;
 /**
  * FieldInfo
  *
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年8月21日 下午1:15:16
  * @since 1.0
  */
