@@ -36,6 +36,7 @@
     <module>quickstart-spider</module>
     <module>quickstart-elasticsearch</module>
     <module>quickstart-druid-io</module>
+    <module>quickstart-samza</module>
   </modules>
 
 </project>
