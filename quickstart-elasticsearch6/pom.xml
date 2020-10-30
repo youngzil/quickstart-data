@@ -6,39 +6,32 @@
     <groupId>org.quickstart</groupId>
     <artifactId>quickstart-data</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>..</relativePath> <!-- lookup parent from repository -->
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>quickstart-elasticsearch</artifactId>
+  <artifactId>quickstart-elasticsearch6</artifactId>
   <packaging>jar</packaging>
   <name>${project.artifactId}-${project.version}</name>
   <url>http://maven.apache.org</url>
   <description>Demo project for XXX</description>
 
   <properties>
-    <elasticsearch.version>2.4.6</elasticsearch.version>
-    <elasticsearch.version>5.6.12</elasticsearch.version>
-    <elasticsearch.version>6.4.2</elasticsearch.version>
-
-    <jest.version>2.4.0</jest.version>
+    <elasticsearch.version>6.8.13</elasticsearch.version>
     <jest.version>6.3.1</jest.version>
-    <jest.version>5.3.4</jest.version>
-
     <apache-logging-log4j.version>2.11.0</apache-logging-log4j.version>
   </properties>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.elasticsearch</groupId>
-      <artifactId>elasticsearch</artifactId>
+      <groupId>org.elasticsearch.client</groupId>
+      <artifactId>transport</artifactId>
       <version>${elasticsearch.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.elasticsearch.client</groupId>
-      <artifactId>transport</artifactId>
+      <artifactId>elasticsearch-rest-high-level-client</artifactId>
       <version>${elasticsearch.version}</version>
     </dependency>
 
@@ -47,13 +40,6 @@
       <groupId>org.elasticsearch.client</groupId>
       <artifactId>x-pack-transport</artifactId>
       <version>5.6.1</version>
-    </dependency>
-
-
-    <dependency>
-      <groupId>org.elasticsearch.client</groupId>
-      <artifactId>elasticsearch-rest-high-level-client</artifactId>
-      <version>${elasticsearch.version}</version>
     </dependency>
 
     <dependency>
@@ -80,7 +66,6 @@
       <version>1.2.51</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
