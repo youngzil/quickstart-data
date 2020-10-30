@@ -17,7 +17,7 @@
 
   <properties>
     <elasticsearch.version>7.9.3</elasticsearch.version>
-    <apache-logging-log4j.version>2.11.0</apache-logging-log4j.version>
+    <apache-logging-log4j.version>2.13.3</apache-logging-log4j.version>
   </properties>
 
   <dependencies>
