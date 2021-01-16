@@ -23,7 +23,7 @@ cluster.name ：配置es的集群名称，默认是elasticsearch，不同的集�
 http.port ：设置对外服务的http端口，默认为9200。不能相同，否则会冲突。
 
 jdk安装：
-export JAVA_HOME=/home/msgframe/jdk1.8.0_152
+export JAVA_HOME=/home/msgtest/jdk1.8.0_152
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export PATH=$JAVA_HOME/bin:$PATH
 
