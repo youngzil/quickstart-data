@@ -1,98 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <!--<parent>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.quickstart</groupId>
+        <artifactId>quickstart-all</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <!--    <relativePath>..</relativePath> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
     <groupId>org.quickstart</groupId>
-    <artifactId>quickstart-all</artifactId>
+    <artifactId>quickstart-data</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>..</relativePath> &lt;!&ndash; lookup parent from repository &ndash;&gt;
-  </parent>-->
+    <packaging>pom</packaging>
+    <name>${project.artifactId}-${project.version}</name>
+    <url>http://maven.apache.org</url>
+    <description>Demo project for Spring Boot Admin</description>
 
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.quickstart</groupId>
-  <artifactId>quickstart-data</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>${project.artifactId}-${project.version}</name>
-  <url>http://maven.apache.org</url>
-  <description>Demo project for Spring Boot Admin</description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
+    <modules>
+        <module>quickstart-storm</module>
+        <module>quickstart-spark</module>
+        <module>quickstart-flink</module>
+        <module>quickstart-flume</module>
+        <module>quickstart-jstorm</module>
+        <module>quickstart-hadoop</module>
+        <module>quickstart-hbase</module>
+        <module>quickstart-lucene</module>
+        <module>quickstart-solr</module>
+        <module>quickstart-spider</module>
+        <module>quickstart-elasticsearch5</module>
+        <module>quickstart-elasticsearch6</module>
+        <module>quickstart-elasticsearch7</module>
+        <module>quickstart-druid-io</module>
+        <module>quickstart-samza</module>
+        <module>quickstart-beam</module>
+    </modules>
 
-  <dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
 
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.12</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13</version>
-      <scope>test</scope>
-    </dependency>
-
-  </dependencies>
-
-  <modules>
-    <module>quickstart-storm</module>
-    <module>quickstart-spark</module>
-    <module>quickstart-flink</module>
-    <module>quickstart-flume</module>
-    <module>quickstart-jstorm</module>
-    <module>quickstart-hadoop</module>
-    <module>quickstart-hbase</module>
-    <module>quickstart-lucene</module>
-    <module>quickstart-solr</module>
-    <module>quickstart-spider</module>
-    <module>quickstart-elasticsearch5</module>
-    <module>quickstart-elasticsearch6</module>
-    <module>quickstart-elasticsearch7</module>
-    <module>quickstart-druid-io</module>
-    <module>quickstart-samza</module>
-    <module>quickstart-beam</module>
-  </modules>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>${maven.compiler.source}</source>
-          <target>${maven.compiler.target}</target>
-        </configuration>
-      </plugin>
-    </plugins>
-
-  </build>
-
-  <repositories>
-
-    <repository>
-      <id>alimaven-public</id>
-      <name>aliyun maven</name>
-      <url>https://maven.aliyun.com/repository/public</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-        <checksumPolicy>fail</checksumPolicy>
-      </snapshots>
-    </repository>
-
-  </repositories>
-
+    </build>
 
 </project>
