@@ -34,6 +34,7 @@
         <module>quickstart-lucene</module>
         <module>quickstart-solr</module>
         <module>quickstart-spider</module>
+        <module>quickstart-elasticsearch2</module>
         <module>quickstart-elasticsearch5</module>
         <module>quickstart-elasticsearch6</module>
         <module>quickstart-elasticsearch7</module>

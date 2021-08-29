@@ -1,4 +1,8 @@
-elasticsearch-head是一个elasticsearch的集群管理工具，它是完全由html5编写的独立网页程序，你可以通过插件把它集成到es。或直接下载源码，在本地打开index.html运行它。该工具的git地址是： https://github.com/Aconex/elasticsearch-head
+elasticsearch-head是一个elasticsearch的集群管理工具，它是完全由html5编写的独立网页程序，你可以通过插件把它集成到es。或直接下载源码，在本地打开index.html运行它。
+
+
+[elasticsearch-head Github](https://github.com/mobz/elasticsearch-head)
+
 
 插件安装方法：
 1.elasticsearch/bin/plugin -install mobz/elasticsearch-head

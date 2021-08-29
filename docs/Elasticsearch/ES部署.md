@@ -108,8 +108,4 @@ ulimit -n 65536
 
 
 
-参考文章
-https://blog.csdn.net/jiuqiyuliang/article/category/6200503
-https://blog.csdn.net/mixiu888/article/details/80698613
-https://blog.csdn.net/laigood/article/details/7421197
 

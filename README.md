@@ -18,5 +18,15 @@ https://www.infoq.cn/article/ray-ai-framework
 
 
 
+上Loki或者EFK吧
+
+EFK
+logstash
+
+
+
+
+
+
 
 

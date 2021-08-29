@@ -9,7 +9,9 @@ Relational DB -> Databases -> Tables -> Rows -> Columns
 Elasticsearch -> Indices   -> Types  -> Documents -> Fields
 
 与ES服务集群交互方式
-可以通过两种方式来连接到elasticsearch（简称es）集群，第一种是通过在你的程序中创建一个嵌入es节点（Node），使之成为es集群的一部分，然后通过这个节点来与es集群通信。第二种方式是用TransportClient这个接口和es集群通信。
+可以通过两种方式来连接到elasticsearch（简称es）集群，
+- 第一种是通过在你的程序中创建一个嵌入es节点（Node），使之成为es集群的一部分，然后通过这个节点来与es集群通信。
+- 第二种方式是用TransportClient这个接口和es集群通信。
 
 
 
