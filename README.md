@@ -11,6 +11,9 @@ https://www.infoq.cn/article/ray-ai-framework
 
 
 
+谈到大数据就会联想到 Hadoop、Spark 整个生态的技术栈。大家都知道开源大数据组件种类众多，其中开源 OLAP 引擎包含 Hive、SparkSQL、Presto、HAWQ、ClickHouse、Impala、Kylin 等。当前企业对大数据的研究与应用日趋理性，那么，如何根据业务特点，选择一个适合自身场景的查询引擎呢？
+
+[开源 OLAP 引擎综评：HAWQ、Presto、ClickHouse](https://www.infoq.cn/article/n1kuvwtyyidhvflepxeu)
 
 
 
