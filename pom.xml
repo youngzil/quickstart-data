@@ -41,6 +41,7 @@
         <module>quickstart-druid-io</module>
         <module>quickstart-samza</module>
         <module>quickstart-beam</module>
+        <module>quickstart-ceph</module>
     </modules>
 
 </project>
