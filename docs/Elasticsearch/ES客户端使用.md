@@ -1,3 +1,9 @@
+java的es客户端有两种Java REST Client和Java API，Java REST Client分为Java Low Level REST Client和Java High Level REST Client，Java API分为Node Client和Transport Client
+
+在Java API中，官方明确表示了Transport Client7.x开始不推荐，8.x开始废除，Node Client在2.3开始推荐用Transport Client替代。目前推荐使用Java REST Client
+
+
+
 https://www.elastic.co/guide/en/elasticsearch/client/index.html
 一、ES Client 简介
 Elasticsearch Java API 客户端连接

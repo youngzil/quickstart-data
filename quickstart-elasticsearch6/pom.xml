@@ -16,18 +16,13 @@
   <description>Demo project for XXX</description>
 
   <properties>
+    <elasticsearch.version>6.6.0</elasticsearch.version>
     <elasticsearch.version>6.8.18</elasticsearch.version>
     <jest.version>6.3.1</jest.version>
     <apache-logging-log4j.version>2.14.1</apache-logging-log4j.version>
   </properties>
 
   <dependencies>
-
-    <dependency>
-      <groupId>org.elasticsearch.client</groupId>
-      <artifactId>transport</artifactId>
-      <version>${elasticsearch.version}</version>
-    </dependency>
 
     <dependency>
       <groupId>org.elasticsearch.client</groupId>
@@ -72,24 +67,17 @@
       <version>2.12.4</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-api</artifactId>
-      <version>${apache-logging-log4j.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-      <version>${apache-logging-log4j.version}</version>
-    </dependency>
-
     <!--用于与slf4j保持桥接 -->
-    <dependency>
+   <!-- <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j-impl</artifactId>
       <version>${apache-logging-log4j.version}</version>
-    </dependency>
+    </dependency>-->
 
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
 
   </dependencies>
 

@@ -59,6 +59,8 @@ public class S3CephTest {
             }
         }
 
+        conn.deleteBucket(newBucket.getName());
+
         // 列出 BUCKET 的内容
         // 下面的代码会输出 bucket 内的所有对象列表。 这也会打印出每一个对象的名字、文件尺寸和最近修改时间。
         ObjectListing objects = conn.listObjects(newBucket.getName());
