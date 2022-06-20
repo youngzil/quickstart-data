@@ -41,6 +41,13 @@ Ceph is an open-source, distributed storage system.
 
 ## S3 API
 
+
+目前最新版本是Java - Version 2
+
+[aws-sdk-java-v2](https://github.com/aws/aws-sdk-java-v2)
+
+
+
 [AWS SDK for Java](https://github.com/aws/aws-sdk-java)  
 [适用于 Java 的 AWS 开发工具包](https://aws.amazon.com/cn/sdk-for-java/)  
 [Amazon S3 Examples Using the AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/examples-s3.html)  
