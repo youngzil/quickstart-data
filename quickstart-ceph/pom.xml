@@ -17,7 +17,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <s3.version>1.11.337</s3.version>
+        <s3.version>1.12.261</s3.version>
         <s3.version>1.12.243</s3.version>
         <swift.version>0.10.4</swift.version>
         <swift.version>0.9.7</swift.version>
