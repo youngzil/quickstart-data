@@ -35,6 +35,7 @@ public class SwiftCephTest {
 
     public static final String username = "XXXX";
     public static final String password = "XXX";
+    //域名和S3一样，比S3多了/auth/1.0
     public static final String authUrl = "http://ceph.test.info/auth/1.0";
 
     @Test

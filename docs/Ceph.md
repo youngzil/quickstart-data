@@ -12,6 +12,10 @@
 [Ceph v10.0 中文文档](https://www.bookstack.cn/read/ceph-10-zh/cd0dcad3545db7c0.md)
 
 
+https://docs.ceph.com/en/quincy/
+https://docs.ceph.com/en/latest/start/intro/
+
+
 C++语言
 
 Ceph is a distributed object, block, and file storage platform
@@ -56,7 +60,7 @@ Ceph is an open-source, distributed storage system.
 [JAVA S3 样例](http://docs.ceph.org.cn/radosgw/s3/java/)  
 [S3 java sdk 文档](https://www.capitalonline.net/uploads/soft/191227/Java%20SDK%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.pdf)  
 
-
+https://docs.ceph.com/en/quincy/radosgw/s3/java/
 
 
 ## Swift API
